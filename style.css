@@ -82,3 +82,8 @@ body {
   tbody tr:nth-child(even){
     background: #dcdcdc;
   }
+
+  .over-budget {
+    color: red; 
+    font-weight: bold;
+}

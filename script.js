@@ -39,9 +39,17 @@ function handleSubmit(event){
     // ! Update total monthly salary
     totalMonthlySalary += monthlySalary;
 
-    // ! Update header with total monthly salary
+    // ! Update footer with total monthly salary
+    const footer = document.querySelector("footer p")
     document.querySelector("footer p").textContent = "Total Monthly: $" + totalMonthlySalary.toFixed(2);
 
+
+    // ! Check if total monthly salary exceeds $20,000 and update footer class (CSS)
+    if (totalMonthlySalary > 20000) {
+        footer.classList.add("over-budget");}
+    else {
+        footer.classList.remove("over-budget");
+    }
 
     console.log("salaryTable from Dom:", document.getElementById("salaryTable"))
 

@@ -16,11 +16,35 @@ function handleSubmit(event){
     console.log("Salary from Salary: ", document.getElementById("salaryInput").value)
 
 
+    // ! create variables to hold text for each input
+    let firstNameInput = document.getElementById("firstNameInput").value
+    let lastNameInput = document.getElementById("lastNameInput").value
+    let idInput = document.getElementById("idInput").value
+    let titleInput = document.getElementById("titleInput").value
+    let salaryInput = document.getElementById("salaryInput").value
 
-    // let firstNameInput = document.getElementById("firstNameIntput").value
-    // let lastNameInput = document.getElementById("lastNameInput").value
-    // let idInput = document.getElementById("idInput").value
-    // let titleInput = document.getElementById("titleInput").value
-    // let salaryInput = document.getElementById("salaryinput").value
-    // console.log("affTable from Dom:", document.getElementById("affTable"))
+    console.log("salaryTable from Dom:", document.getElementById("salaryTable"))
+
+    // ! create new rows for data each time submit is clicked
+    const table = document.getElementById("salaryTable");
+    const newRow = table.insertRow();
+    const cell1 = newRow.insertCell(0);
+    const cell2 = newRow.insertCell(1);
+    const cell3 = newRow.insertCell(2);
+    const cell4 = newRow.insertCell(3);
+    const cell5 = newRow.insertCell(4);
+
+    // ! each input will populate its correct position in the table
+    cell1.innerHTML += document.getElementById("firstNameInput").value;
+    cell2.innerHTML += document.getElementById("lastNameInput").value;
+    cell3.innerHTML += document.getElementById("idInput").value;
+    cell4.innerHTML += document.getElementById("titleInput").value;
+    cell5.innerHTML += document.getElementById("salaryInput").value;
+    
+    // ! clear the form each time submit is clicked
+    document.getElementById("firstNameInput").value = ''
+    document.getElementById("lastNameInput").value = ''
+    document.getElementById("idInput").value = ''
+    document.getElementById("titleInput").value = ''
+    document.getElementById("salaryInput").value = ''
 }

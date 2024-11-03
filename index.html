@@ -1,18 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
+<script src="script.js"></script>
 <head>
   <meta charset="UTF-8">
   <link rel="stylesheet" href="style.css">
   <title>Salary Calculator</title>
 </head>
+
+
+
 <body>
   <header>
     <h1>Salary Calculator</h1>
   </header>
   <main>
-    <h2>Add Employee</h2>
-    <h2>Employees</h2>
+    <section>
+      <h2>Add Employee</h2>
+      <form>
+        <input
+          placeholder="First Name"
+          type="text"
+          id="firstNameInput">
+        <input
+          placeholder="Last Name"
+          type="text"
+          id="lastNameInput">
+        <input
+          placeholder="ID"
+          type="text"
+          id="idInput">
+        <input
+          placeholder="Title"
+          type="text"
+          id="titleInput">
+        <input
+          placeholder="Annual Salary"
+          type="text"
+          id="salaryInput">
+        <button onClick="handleSubmit(event)">Submit</button>
+      </form>
+    </section>
+
+
+    <section>
+      <h2>Employees</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>ID</th>
+            <th>Title</th>
+            <th>Annual Salary</th>
+          </tr>
+        </thead>
+        <tbody id="salaryTable">
+          <tr>
+            <td>
+              Jake 
+            </td>
+            <td>
+              Berg
+            </td>
+            <td>
+              12345
+            </td>
+            <td>
+              CEO
+            </td>
+            <td>
+              $1,000,000
+            </td>
+          </tr>
+         <!-- This is where input values will go --> 
+        </tbody>
+      </table>
+    </section>
   </main>
+
   <footer>
     <p>Total Monthly</p>
   </footer>

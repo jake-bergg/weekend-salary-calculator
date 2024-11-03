@@ -48,10 +48,12 @@ function handleSubmit(event){
 
     // ! Add an event listener to the delete button
     deleteButton.addEventListener("click", function() {
-    // ! Remove the row of the button that was clicked
-    table.deleteRow(newRow.rowIndex);
-    })
+        // ! Remove the row containing the clicked button
+        const row = this.parentNode.parentNode; // * Go up to the row
+        row.parentNode.removeChild(row); // * Remove the row from the table
+    });
 
+    // Append the delete button to the cell
     cell6.appendChild(deleteButton);
 
     

@@ -1,3 +1,6 @@
+
+let totalMonthlySalary = 0 
+
 function handleSubmit(event){
     // ! prevent page from refreshing when submit button is pressed.
     event.preventDefault()
@@ -21,7 +24,24 @@ function handleSubmit(event){
     let lastNameInput = document.getElementById("lastNameInput").value
     let idInput = document.getElementById("idInput").value
     let titleInput = document.getElementById("titleInput").value
-    let salaryInput = document.getElementById("salaryInput").value
+    // ! parseFloat to make the salaryInput value a number
+    let salaryInput = parseFloat(document.getElementById("salaryInput").value)
+
+    // ! if salaryInput is not a number, alert user
+    if (isNaN(salaryInput)){
+        alert("Please enter a valid salary.");
+        return;
+    }
+
+    // ! Calculate monthly salary
+    const monthlySalary = salaryInput / 12;
+
+    // ! Update total monthly salary
+    totalMonthlySalary += monthlySalary;
+
+    // ! Update header with total monthly salary
+    document.querySelector("footer p").textContent = "Total Monthly: $" + totalMonthlySalary.toFixed(2);
+
 
     console.log("salaryTable from Dom:", document.getElementById("salaryTable"))
 
@@ -53,7 +73,7 @@ function handleSubmit(event){
         row.parentNode.removeChild(row); // * Remove the row from the table
     });
 
-    // Append the delete button to the cell
+    // ! Append the delete button to the cell
     cell6.appendChild(deleteButton);
 
     

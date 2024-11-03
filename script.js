@@ -33,6 +33,7 @@ function handleSubmit(event){
     const cell3 = newRow.insertCell(2);
     const cell4 = newRow.insertCell(3);
     const cell5 = newRow.insertCell(4);
+    const cell6 = newRow.insertCell(5); // * row for delete button
 
     // ! each input will populate its correct position in the table
     cell1.innerHTML += document.getElementById("firstNameInput").value;
@@ -40,6 +41,19 @@ function handleSubmit(event){
     cell3.innerHTML += document.getElementById("idInput").value;
     cell4.innerHTML += document.getElementById("titleInput").value;
     cell5.innerHTML += document.getElementById("salaryInput").value;
+
+    // ! Create delete button
+    const deleteButton = document.createElement("button");
+    deleteButton.textContent = "Delete";
+
+    // ! Add an event listener to the delete button
+    deleteButton.addEventListener("click", function() {
+    // ! Remove the row of the button that was clicked
+    table.deleteRow(newRow.rowIndex);
+    })
+
+    cell6.appendChild(deleteButton);
+
     
     // ! clear the form each time submit is clicked
     document.getElementById("firstNameInput").value = ''

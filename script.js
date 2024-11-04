@@ -30,6 +30,7 @@ function handleSubmit(event){
     // ! if salaryInput is not a number, alert user
     if (isNaN(salaryInput)){
         alert("Please enter a valid salary.");
+        document.getElementById("salaryInput").value = ''
         return;
     }
 

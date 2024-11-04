@@ -24,8 +24,8 @@ function handleSubmit(event){
     let lastNameInput = document.getElementById("lastNameInput").value
     let idInput = document.getElementById("idInput").value
     let titleInput = document.getElementById("titleInput").value
-    // ! parseFloat to make the salaryInput value a number
-    let salaryInput = parseFloat(document.getElementById("salaryInput").value)
+    // ! Number() to make the salaryInput value a number
+    let salaryInput = Number(document.getElementById("salaryInput").value)
 
     // ! if salaryInput is not a number, alert user
     if (isNaN(salaryInput)){

@@ -9,7 +9,7 @@ function handleSubmit(event){
     
     // ! Code that will add text intput into the form
     console.log("First Name from firstName: ", document.getElementById("firstNameInput").value)
-
+    // * console log will take the input id from HTML and turn it into a value to use. 
     console.log("Last Name from lastName: ", document.getElementById("lastNameInput").value)
 
     console.log("ID from ID: ", document.getElementById("idInput").value)
@@ -21,6 +21,7 @@ function handleSubmit(event){
 
     // ! create variables to hold text for each input
     let firstNameInput = document.getElementById("firstNameInput").value
+    // * creates a variable that uses the input to create a value
     let lastNameInput = document.getElementById("lastNameInput").value
     let idInput = document.getElementById("idInput").value
     let titleInput = document.getElementById("titleInput").value
@@ -41,8 +42,8 @@ function handleSubmit(event){
     totalMonthlySalary += monthlySalary;
 
     // ! Update footer with total monthly salary
-    const footer = document.querySelector("footer p")
-    document.querySelector("footer p").textContent = "Total Monthly: $" + totalMonthlySalary.toFixed(2);
+    const footer = document.querySelector("footer")
+    document.querySelector("footer").textContent = "Total Monthly: $" + totalMonthlySalary.toFixed(2);
 
 
     // ! Check if total monthly salary exceeds $20,000 and update footer class (CSS)
@@ -54,7 +55,24 @@ function handleSubmit(event){
 
     console.log("salaryTable from Dom:", document.getElementById("salaryTable"))
 
-    // ! create new rows for data each time submit is clicked
+
+
+// ! NEXT SECTION SHOULD HAVE BEEN DONE LIKE THIS: 
+// Append to table
+// * tableBody.innerHTML += `
+// * <tr>
+// *  <td>${firstNameInput}</td>
+// *  <td>${lastNameInput}</td>
+// *  <td>${idInput}</td>
+// *  <td>${titleInput}</td>
+// *  <td>${annualSalaryInput}</td>
+// *  <td><button onClick="deleteEmployee(event)">❌</button></td>
+// *</tr>`
+
+
+
+
+    // ! create new rows for data each time submit is clicked    
     const table = document.getElementById("salaryTable");
     const newRow = table.insertRow();
     const cell1 = newRow.insertCell(0);
